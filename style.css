@@ -1,4 +1,4 @@
-/* FUENTE 8 BITS LOCAL */
+/* FUENTE 8 BITS */
 @font-face{
     font-family: "retro";
     src: url("assets/PressStart2P-Regular.ttf");
@@ -10,14 +10,9 @@ body{
     font-family:Arial;
     margin:0;
     padding:0;
+    overflow-x:hidden; /* 🔥 evita desbordes */
 }
 
-img.placa {
-    pointer-events: none;
-    max-width:100%;
-}
-
-/* RETRO */
 .retro{
     font-family:"retro";
 }
@@ -33,24 +28,20 @@ img.placa {
 .tituloCarga{
     font-size:28px;
     color:cyan;
-    padding:10px;
 }
 
 .portada{
     width:90%;
-    max-width:500px;
-    margin:20px 0;
+    max-width:400px;
 }
 
 .autor{
     margin-top:10px;
-    font-size:18px;
 }
 
 .parpadeo{
     color:limegreen;
-    font-size: 22px;
-    margin-top:30px;
+    font-size: 20px;
     animation: blink 1s infinite;
 }
 
@@ -65,49 +56,46 @@ img.placa {
 /* ========================= */
 #pantallaInicio{
     text-align:center;
-    margin-top:20px;
     padding:10px;
 }
 
 .recepcionista{
-    background-color: #0a3d2e;
+    background:#0a3d2e;
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
     align-items:center;
-    gap:20px;
-    margin-bottom:30px;
+    gap:15px;
+    margin-bottom:20px;
     padding:10px;
 }
 
 .recepcionista img{
-    width:200px;
+    width:140px;
     border-radius:10%;
 }
 
 .dialogo{
     background:white;
     color:black;
-    line-height: 1.6; 
-    padding:15px;
+    padding:12px;
     border-radius:10px;
     text-align: justify;
 }
 
 .dialogo.grande{
-    font-size:18px;
-    max-width:600px;
+    font-size:16px;
+    max-width:500px;
 }
 
 .config{
-    font-size:20px;
+    font-size:18px;
 }
 
 .caja{
-    text-align: center;
-    margin-top: 20px;
-    font-size:20px;
-    width:80px;
+    margin-top: 10px;
+    font-size:18px;
+    width:70px;
 }
 
 /* BOTÓN */
@@ -116,7 +104,7 @@ img.placa {
   margin: 10px;
   border: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .btn-pulse {
@@ -132,17 +120,20 @@ img.placa {
 }
 
 /* ========================= */
-/* JUEGO */
+/* HUD */
 /* ========================= */
 #hud{
-    font-size: 16px;
     text-align:center;
+    font-size:16px;
 }
 
+/* ========================= */
+/* JUEGO */
+/* ========================= */
 #game{
     display:flex;
     flex-direction:column;
-    gap:15px;
+    gap:10px;
     padding:10px;
 }
 
@@ -158,32 +149,43 @@ img.placa {
 }
 
 .cliente img{
-    width:100px;
+    width:80px;
 }
 
-/* PC */
+/* ========================= */
+/* PC (CLAVE PARA ALINEACIÓN) */
+/* ========================= */
 .pc{
-    position:relative;
-    width:100%;
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+
+    aspect-ratio: 16/10; /* 🔥 CLAVE */
 }
 
 .pc img{
-    width:100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events:none;
 }
 
-/* ZONAS */
+/* ========================= */
+/* ZONAS INTERACTIVAS */
+/* ========================= */
 .part{
     position:absolute;
-    border:2px solid rgba(0,255,255,0.4);
+    border:2px solid rgba(0,255,255,0.3);
     cursor:pointer;
 }
 
 .part:hover{
-    background:rgba(0,255,255,0.3);
+    background:rgba(0,255,255,0.25);
 }
 
 /* ========================= */
-/* POSICIONES (ESCALABLES) */
+/* POSICIONES (% RESPONSIVE) */
 /* ========================= */
 .fuente { top: 4%; left: 77%; width: 15%; height: 12%; }
 .cpu { top: 16%; left: 42%; width: 10%; height: 10%; }
@@ -199,19 +201,19 @@ img.placa {
 /* HERRAMIENTAS */
 /* ========================= */
 .toolbox{
-    margin-top:20px;
     text-align:center;
+    margin-top:15px;
 }
 
 .tool {
     display: inline-block;
-    padding: 10px;
-    margin: 6px;
+    padding: 8px;
+    margin: 5px;
     background: #333;
     color: white;
     border: 2px solid #555;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .tool:hover {
@@ -225,7 +227,7 @@ img.placa {
 
 .highlight {
     border: 3px solid yellow;
-    box-shadow: 0 0 15px yellow;
+    box-shadow: 0 0 10px yellow;
 }
 
 /* ========================= */
@@ -236,17 +238,17 @@ img.placa {
     top: 5px;
     right: 5px;
     background: #111;
-    padding: 8px;
+    padding: 6px;
     border-radius: 10px;
     z-index: 1000;
 }
 
 .audio-control button{
-    font-size: 14px;
+    font-size: 12px;
 }
 
 /* ========================= */
-/* 📱 RESPONSIVE EXTRA */
+/* 📱 RESPONSIVE */
 /* ========================= */
 @media (min-width: 768px){
 
@@ -257,6 +259,7 @@ img.placa {
     .cliente{
         width:25%;
         flex-direction:column;
+        text-align:center;
     }
 
     .pc{
@@ -264,11 +267,11 @@ img.placa {
     }
 
     .cliente img{
-        width:100%;
+        width:120px;
     }
 
     .dialogo.grande{
-        font-size:22px;
+        font-size:20px;
     }
 
     .tituloCarga{
@@ -276,6 +279,6 @@ img.placa {
     }
 
     .btn{
-        font-size:25px;
+        font-size:22px;
     }
 }
