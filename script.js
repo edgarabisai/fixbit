@@ -118,7 +118,7 @@ const casos = [
     /* DRIVERS / SOFTWARE */
     {p:"Problema: Sin sonido", desc:"No sale audio ni por las bocinas ni por audífonos. Ya probé reiniciar pero sigue sin funcionar.", comp:"disco", tipo:"drivers"},
     {p:"Problema: USB falla", desc:"Los puertos USB no reconocen memorias, mouse o teclado. Algunos puertos sí funcionan, otros no.", comp:"disco", tipo:"drivers"},
-    {p:"Problema: WiFi lento", desc:"La conexión WiFi es muy lenta o se desconecta constantemente, aunque otros dispositivos en la casa funcionan bien.", comp:"disk", tipo:"drivers"},
+    {p:"Problema: WiFi lento", desc:"La conexión WiFi es muy lenta o se desconecta constantemente, aunque otros dispositivos en la casa funcionan bien.", comp:"disco", tipo:"drivers"},
 
     /* SOFTWARE */
     {p:"Problema: PC lenta", desc:"La computadora está muy lenta aunque no tengo muchos programas abiertos. Creo que tiene demasiados archivos basura.", comp:"disco", tipo:"liberar"},
