@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>FixBiT</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="audio-control">
+    <button id="btnMute">🔊</button>
+    <input type="range" id="volumen" min="0" max="1" step="0.01" value="0.5">
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="sounds/bg.mp3" type="audio/mpeg">
+</audio>
+
+<div id="hud" class="retro"></div>
+<div id="game"></div>
+
+<script src="script.js"></script>
+
+<script>
+window.addEventListener("load", function(){
+    let url = window.location.href;
+    console.log("URL completa:", url);
+    let match = url.match(/casos=(\d+)/);
+    let numCasos = 14;
+    if(match && match[1]){
+        numCasos = parseInt(match[1]);
+    }
+    console.log("Casos detectados:", numCasos);
+    iniciarDesdeMenu(numCasos);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+/* FUENTE 8 BITS LOCAL */
+@font-face{
+    font-family: "retro";
+    src: url("assets/PressStart2P-Regular.ttf");
+}
+
+body{
+    background:#000;
+    color:white;
+    font-family:Arial;
+    margin:0;
+    padding:0;
+}
+
+img.placa {
+    pointer-events: none;
+    max-width:100%;
+}
+
+/* RETRO */
+.retro{
+    font-family:"retro";
+}
+
+/* ========================= */
+/* PANTALLA CARGA */
+/* ========================= */
+#pantallaCarga{
+    text-align:center;
+    margin-top:30px;
+}
+
+.tituloCarga{
+    font-size:28px;
+    color:cyan;
+    padding:10px;
+}
+
+.portada{
+    width:90%;
+    max-width:500px;
+    margin:20px 0;
+}
+
+.autor{
+    margin-top:10px;
+    font-size:18px;
+}
+
+.parpadeo{
+    color:limegreen;
+    font-size: 22px;
+    margin-top:30px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink{
+    0%{opacity:1;}
+    50%{opacity:0;}
+    100%{opacity:1;}
+}
+
+/* ========================= */
+/* INICIO */
+/* ========================= */
+#pantallaInicio{
+    text-align:center;
+    margin-top:20px;
+    padding:10px;
+}
+
+.recepcionista{
+    background-color: #0a3d2e;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    margin-bottom:30px;
+    padding:10px;
+}
+
+.recepcionista img{
+    width:200px;
+    border-radius:10%;
+}
+
+.dialogo{
+    background:white;
+    color:black;
+    line-height: 1.6; 
+    padding:15px;
+    border-radius:10px;
+    text-align: justify;
+}
+
+.dialogo.grande{
+    font-size:18px;
+    max-width:600px;
+}
+
+.config{
+    font-size:20px;
+}
+
+.caja{
+    text-align: center;
+    margin-top: 20px;
+    font-size:20px;
+    width:80px;
+}
+
+/* BOTÓN */
+.btn {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.btn-pulse {
+  background-color: #3498db;
+  color: white;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* ========================= */
+/* JUEGO */
+/* ========================= */
+#hud{
+    font-size: 16px;
+    text-align:center;
+}
+
+#game{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    padding:10px;
+}
+
+/* CLIENTE */
+.cliente{
+    width:100%;
+    background:#1a1f2e;
+    padding:10px;
+    border-radius:10px;
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.cliente img{
+    width:100px;
+}
+
+/* PC */
+.pc{
+    position:relative;
+    width:100%;
+}
+
+.pc img{
+    width:100%;
+}
+
+/* ZONAS */
+.part{
+    position:absolute;
+    border:2px solid rgba(0,255,255,0.4);
+    cursor:pointer;
+}
+
+.part:hover{
+    background:rgba(0,255,255,0.3);
+}
+
+/* ========================= */
+/* POSICIONES (ESCALABLES) */
+/* ========================= */
+.fuente { top: 4%; left: 77%; width: 15%; height: 12%; }
+.cpu { top: 16%; left: 42%; width: 10%; height: 10%; }
+.ram { top: 7%; left: 57%; width: 12%; height: 25%; }
+.disk { top: 2%; left: 10%; width: 12%; height: 25%; }
+.gpu { top: 52%; left: 30%; width: 35%; height: 18%; }
+.mouse { top: 68%; left: 12%; width: 10%; height: 15%; }
+.monitor { top: 37%; left: 10%; width: 12%; height: 15%; }
+.teclado { top: 31%; left: 77%; width: 20%; height: 10%; }
+.impresora { top: 52%; left: 79%; width: 18%; height: 15%; }
+
+/* ========================= */
+/* HERRAMIENTAS */
+/* ========================= */
+.toolbox{
+    margin-top:20px;
+    text-align:center;
+}
+
+.tool {
+    display: inline-block;
+    padding: 10px;
+    margin: 6px;
+    background: #333;
+    color: white;
+    border: 2px solid #555;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.tool:hover {
+    background: #555;
+    border-color: #0f0;
+}
+
+.tool:active {
+    transform: scale(0.95);
+}
+
+.highlight {
+    border: 3px solid yellow;
+    box-shadow: 0 0 15px yellow;
+}
+
+/* ========================= */
+/* AUDIO */
+/* ========================= */
+.audio-control{
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    background: #111;
+    padding: 8px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.audio-control button{
+    font-size: 14px;
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE EXTRA */
+/* ========================= */
+@media (min-width: 768px){
+
+    #game{
+        flex-direction:row;
+    }
+
+    .cliente{
+        width:25%;
+        flex-direction:column;
+    }
+
+    .pc{
+        width:75%;
+    }
+
+    .cliente img{
+        width:100%;
+    }
+
+    .dialogo.grande{
+        font-size:22px;
+    }
+
+    .tituloCarga{
+        font-size:36px;
+    }
+
+    .btn{
+        font-size:25px;
+    }
+}

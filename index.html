@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>FixBit</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- PANTALLA DE CARGA -->
+<div id="pantallaCarga">
+    <h1 class="retro tituloCarga">SIMULADOR DE REPARACIÓN DE COMPUTADORAS</h1>
+
+    <img src="assets/portada.png" class="portada">
+
+   
+    <p class="retro autor">Mtro. Edgar Abisaí Hernández Díaz</p>
+    <p class="retro autor">2026</p>
+
+    <p class="retro parpadeo">Cargando...</p>
+</div>
+
+<!-- PANTALLA INICIO -->
+<div id="pantallaInicio" style="display:none;">
+
+    
+
+    <div class="recepcionista">
+        <img src="assets/avatarp.png">
+        <div class="dialogo grande retro">
+            Bienvenido técnico.<br><br>
+            Tu trabajo será diagnosticar y reparar computadoras.<br><br>
+            1. Analiza la falla<br>
+            2. Selecciona el componente<br>
+            3. Usa la herramienta correcta<br><br>
+            Cada acierto te da puntos
+        </div>
+    </div>
+
+    <div class="config retro">
+        <label>Número de casos:</label><br>
+        <input class="caja retro" type="number" id="numCasos" value="14" min="1" max="20">
+        <br><br>
+            <button onclick="irAlJuego()"class="btn btn-pulse retro" >INICIAR</button>
+
+    </div>
+
+</div>
+
+<script>
+// SIMULACIÓN DE CARGA
+setTimeout(()=>{
+    document.getElementById("pantallaCarga").style.display = "none";
+    document.getElementById("pantallaInicio").style.display = "block";
+}, 5000);
+
+// IR AL JUEGO
+function irAlJuego(){
+    let n = document.getElementById("numCasos").value;
+    window.location.href = "juego.html?casos=" + n;
+}
+</script>
+
+</body>
+</html>
